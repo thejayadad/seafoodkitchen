@@ -18,7 +18,7 @@ const AuthLinks = () => {
                 </div>
             ) : (
                 <div>
-            <button onClick={signIn}>LogIn</button>
+            <button onClick={signIn()}>LogIn</button>
 
                 </div>
             )
