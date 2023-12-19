@@ -27,7 +27,7 @@ const ProfilePage = () => {
     ev.preventDefault();
 
     try {
-      setIsLoading(true); // Set loading state to true
+      setIsLoading(true); 
 
       const response = await fetch('/api/profile', {
         method: 'PUT',
