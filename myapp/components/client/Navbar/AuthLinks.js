@@ -12,13 +12,14 @@ const AuthLinks = () => {
     <div className='flex items-center gap-4'>
         {
             session ? (
-                <div>
+                <div className='flex items-center gap-6'>
+                    <Link href={`/profile`}>{session.user.email}</Link>
             <span onClick={signOut}>LogOut</span>
 
                 </div>
             ) : (
                 <div>
-            <button onClick={signIn()}>LogIn</button>
+            <button onClick={signIn}>LogIn</button>
 
                 </div>
             )
