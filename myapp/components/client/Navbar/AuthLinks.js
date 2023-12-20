@@ -6,26 +6,25 @@ import { motion, AnimatePresence } from 'framer-motion';
 import { signIn, signOut, useSession } from 'next-auth/react';
 
 const AuthLinks = () => {
-    const { data: session } = useSession();
+  const { data: session } = useSession();
 
   return (
     <div className='flex items-center gap-4'>
-        {
-            session ? (
-                <div className='flex items-center gap-6'>
-                    <Link href={`/profile`}>{session.user.email}</Link>
-            <span onClick={signOut}>LogOut</span>
-
-                </div>
-            ) : (
-                <div>
-            <button onClick={signIn}>LogIn</button>
-
-                </div>
-            )
-        }
+      {session ? (
+        <div className='flex items-center gap-6'>
+          {session.user.email === 'thejayadad@gmail.com' && (
+            <Link href={'/admin'}>Admin</Link>
+          )}
+          <Link href={`/profile/`}>{session.user.email}</Link>
+          <span onClick={signOut}>LogOut</span>
+        </div>
+      ) : (
+        <div>
+          <button onClick={signIn}>LogIn</button>
+        </div>
+      )}
     </div>
-  )
-}
+  );
+};
 
-export default AuthLinks
+export default AuthLinks;

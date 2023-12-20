@@ -47,6 +47,7 @@ export const authOptions = {
             email: profile.email,
             name: "",
             image: profile.picture,
+            
           });
         }
 
